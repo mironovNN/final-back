@@ -24,12 +24,12 @@ public class FinalBackApplication {
     @Bean
     public CommandLineRunner runner(PostRepository repository, UserService service) throws IOException {
         return args -> {
-            UserSaveRequestDto vasyaSave = new UserSaveRequestDto(0, "Вася", "vasya", "123456", "vasya@mail.ru", "avaVasya.jpg");
+            UserSaveRequestDto vasyaSave = new UserSaveRequestDto(0, "Вася", "vasya", "123456", "vasya@mail.ru", "avatar.jpg");
             UserEntity vasya = service.save(vasyaSave);
-            UserSaveRequestDto mashaSave = new UserSaveRequestDto(0, "Маша", "masha", "qwerty", "masha@mail.ru", "avaMasha.jpg");
+            UserSaveRequestDto mashaSave = new UserSaveRequestDto(0, "Маша", "masha", "qwerty", "masha@mail.ru", "avatar.jpg");
             UserEntity masha = service.save(mashaSave);
             repository.saveAll(List.of(
-                    new PostEntity(0, vasya, LocalDate.now(), "First", null, false, 0),
+                    new PostEntity(0, vasya, LocalDate.now(), "First", "avatar.jpg", false, 0),
                     new PostEntity(0, masha, LocalDate.now(), "Second", null, false, 0),
                     new PostEntity(0, vasya, LocalDate.now(), "Third", null, false, 0),
                     new PostEntity(0, masha, LocalDate.now(), "Fourth", null, false, 0)
