@@ -14,7 +14,6 @@ import java.io.IOException;
 import java.time.LocalDate;
 import java.util.List;
 
-
 @SpringBootApplication
 public class FinalBackApplication {
 
@@ -25,9 +24,9 @@ public class FinalBackApplication {
     @Bean
     public CommandLineRunner runner(PostRepository repository, UserService service) throws IOException {
         return args -> {
-            UserSaveRequestDto vasyaSave = new UserSaveRequestDto(0, "Вася", "vasya", "123456", "vasya@mail.ru", "avaVasya.jpeg");
+            UserSaveRequestDto vasyaSave = new UserSaveRequestDto(0, "Вася", "vasya", "123456", "vasya@mail.ru", "avaVasya.jpg");
             UserEntity vasya = service.save(vasyaSave);
-            UserSaveRequestDto mashaSave = new UserSaveRequestDto(0, "Маша", "masha", "qwerty", "masha@mail.ru", "avaMasha.jpeg");
+            UserSaveRequestDto mashaSave = new UserSaveRequestDto(0, "Маша", "masha", "qwerty", "masha@mail.ru", "avaMasha.jpg");
             UserEntity masha = service.save(mashaSave);
             repository.saveAll(List.of(
                     new PostEntity(0, vasya, LocalDate.now(), "First", null, false, 0),

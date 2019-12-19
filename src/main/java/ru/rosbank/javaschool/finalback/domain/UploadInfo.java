@@ -12,4 +12,5 @@ public class UploadInfo {
 
     private Resource resource;
     private String mimeType;
+
 }

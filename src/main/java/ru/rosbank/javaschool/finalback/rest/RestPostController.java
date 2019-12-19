@@ -18,6 +18,7 @@ import java.util.List;
 @RequiredArgsConstructor
 @RequestMapping("/api/posts")
 public class RestPostController {
+
     private final PostService service;
     private final UserService userService;
     private final PermissionService permissionService;
@@ -69,7 +70,6 @@ public class RestPostController {
     public PostResponseDto dislikeById(@PathVariable int id) {
         return service.dislikeById(id);
     }
-
 
     private UserEntity getAuthorizedUser() {
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();

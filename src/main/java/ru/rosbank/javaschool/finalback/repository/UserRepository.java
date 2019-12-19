@@ -18,7 +18,6 @@ public interface UserRepository extends JpaRepository<UserEntity, Integer> {
 
     List<UserEntity> findAllByUsernameIs(String q);
 
-
     @Modifying
     @Query("UPDATE UserEntity u SET u.enabled=false WHERE u.id = :id")
     void setRemovedById(@Param("id") int id);

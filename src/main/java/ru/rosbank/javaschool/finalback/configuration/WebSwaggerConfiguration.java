@@ -18,7 +18,7 @@ public class WebSwaggerConfiguration {
         return new Docket(DocumentationType.SWAGGER_2)
                 .ignoredParameterTypes(UserEntity.class)
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("ru.rosbank.javaschool.finalprojectback.rest"))
+                .apis(RequestHandlerSelectors.basePackage("ru.rosbank.javaschool.finalback.rest"))
                 .paths(PathSelectors.any())
                 .build();
     }

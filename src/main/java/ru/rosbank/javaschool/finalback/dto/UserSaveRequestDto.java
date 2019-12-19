@@ -15,10 +15,10 @@ public class UserSaveRequestDto {
 
     private int id;
     @NotNull
-    @Size(min = 1, message = "error.validation.min_size")
+    @Size(min = 2, message = "error.validation.min_size")
     private String name;
     @NotNull
-    @Size(min = 1, message = "error.validation.min_size")
+    @Size(min = 2, message = "error.validation.min_size")
     private String username;
     @NotNull
     @Size(min = 4, message = "error.validation.min_size")

@@ -39,7 +39,6 @@ public class PostService {
 
     public int getCountOfNewPosts(int firstPostId) {
         Optional<PostEntity> firstPost = repository.findById(firstPostId);
-        ;
         List<Optional<PostEntity>> collect = repository.findAll().stream()
                 .filter(o -> !o.isRemoved())
                 .sorted((o1, o2) -> -(o1.getId() - o2.getId()))

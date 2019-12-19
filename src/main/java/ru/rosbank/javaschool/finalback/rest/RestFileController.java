@@ -10,7 +10,6 @@ import ru.rosbank.javaschool.finalback.domain.UploadInfo;
 import ru.rosbank.javaschool.finalback.dto.UploadResponseDto;
 import ru.rosbank.javaschool.finalback.service.FileService;
 
-
 import java.io.IOException;
 
 @RestController

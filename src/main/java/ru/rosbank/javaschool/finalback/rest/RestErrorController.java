@@ -108,7 +108,6 @@ public class RestErrorController extends AbstractErrorController {
         return getErrorResponseDtoResponseEntity(error, status, message, Collections.emptyMap());
     }
 
-
     private ResponseEntity<ErrorResponseDto> getErrorResponseDtoResponseEntity(Throwable error, int status, String message, Map<String, List<String>> errors) {
         error.printStackTrace();
         return ResponseEntity.status(status).body(
@@ -120,4 +119,5 @@ public class RestErrorController extends AbstractErrorController {
     public String getErrorPath() {
         return path;
     }
+
 }
