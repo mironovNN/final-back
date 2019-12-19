@@ -1,0 +1,23 @@
+package ru.rosbank.javaschool.finalback.validator;
+
+import ru.rosbank.javaschool.finalback.constraint.Email;
+
+import javax.validation.ConstraintValidator;
+import javax.validation.ConstraintValidatorContext;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+public class EmailValidator implements ConstraintValidator<Email, String> {
+
+    public boolean isValid(String value, ConstraintValidatorContext context) {
+
+        if (value == null) {
+            return true;
+        }
+        Pattern pattern = Pattern.compile("^[A-Za-z].[A-Za-z0-9_-]+[A-Za-z0-9]+@[a-z]+\\.[a-z]{2,5}$");
+        Matcher matcher = pattern.matcher(value);
+        System.out.println(matcher.matches());
+        return matcher.matches();
+    }
+
+}
